@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Admin Dashboard</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <!-- Datatable -->
+    <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+   <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<div class="nav-header">
+            <a href="index.html" class="brand-logo">
+				<img src="images/user.png" width="56" alt="">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 0C12.3122 0 0 12.3122 0 27.5C0 42.6878 12.3122 55 27.5 55C42.6878 55 55 42.6878 55 27.5C55 12.3122 42.6878 0 27.5 0ZM28.0092 46H19L19.0001 34.9784L19 27.5803V24.4779C19 14.3752 24.0922 10 35.3733 10V17.5571C29.8894 17.5571 28.0092 19.4663 28.0092 24.4779V27.5803H36V34.9784H28.0092V46Z" fill="url(#paint0_linear)"></path>
+					<defs>
+					</defs>
+				</svg>
+				<div class="brand-title">
+					<h2 class="">BeTrack</h2>
+					<span class="brand-sub-title">@Team40</span>
+				</div>
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header border-bottom">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Dashboard
+                            </div>
+							<div class="card-body">
+								<ul class="nav nav-pills mb-3">
+									<li class="button"><a href="#Customers-view" data-toggle="tab" class="btn btn-primary">Customers</a></li>
+									<li class="button"><a href="#Employees-view" data-toggle="tab" class="btn btn-info">Employees</a></li>
+									<li class="button"><a href="#representative-view" data-toggle="tab" class="btn btn-dark">representative</a></li>
+
+								</ul>
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right">
+							<li class="nav-item d-flex align-items-center">
+								<div class="input-group search-area">
+									<input type="text" class="form-control" placeholder="Search here...">
+									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
+								</div>
+							</li>
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+									<svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M23.3333 19.8333H23.1187C23.2568 19.4597 23.3295 19.065 23.3333 18.6666V12.8333C23.3294 10.7663 22.6402 8.75902 21.3735 7.12565C20.1068 5.49228 18.3343 4.32508 16.3333 3.80679V3.49996C16.3333 2.88112 16.0875 2.28763 15.6499 1.85004C15.2123 1.41246 14.6188 1.16663 14 1.16663C13.3812 1.16663 12.7877 1.41246 12.3501 1.85004C11.9125 2.28763 11.6667 2.88112 11.6667 3.49996V3.80679C9.66574 4.32508 7.89317 5.49228 6.6265 7.12565C5.35983 8.75902 4.67058 10.7663 4.66667 12.8333V18.6666C4.67053 19.065 4.74316 19.4597 4.88133 19.8333H4.66667C4.35725 19.8333 4.0605 19.9562 3.84171 20.175C3.62292 20.3938 3.5 20.6905 3.5 21C3.5 21.3094 3.62292 21.6061 3.84171 21.8249C4.0605 22.0437 4.35725 22.1666 4.66667 22.1666H23.3333C23.6428 22.1666 23.9395 22.0437 24.1583 21.8249C24.3771 21.6061 24.5 21.3094 24.5 21C24.5 20.6905 24.3771 20.3938 24.1583 20.175C23.9395 19.9562 23.6428 19.8333 23.3333 19.8333Z" fill="#717579"></path>
+										<path d="M9.9819 24.5C10.3863 25.2088 10.971 25.7981 11.6766 26.2079C12.3823 26.6178 13.1838 26.8337 13.9999 26.8337C14.816 26.8337 15.6175 26.6178 16.3232 26.2079C17.0288 25.7981 17.6135 25.2088 18.0179 24.5H9.9819Z" fill="#717579"></path>
+									</svg>
+                                    <span class="badge light text-white bg-warning rounded-circle"></span>
+                                </a>
+                            </li>
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link " href="javascript:void(0);" data-bs-toggle="dropdown">
+									<svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M22.1666 5.83331H20.9999V3.49998C20.9999 3.19056 20.877 2.89381 20.6582 2.67502C20.4394 2.45623 20.1427 2.33331 19.8333 2.33331C19.5238 2.33331 19.2271 2.45623 19.0083 2.67502C18.7895 2.89381 18.6666 3.19056 18.6666 3.49998V5.83331H9.33325V3.49998C9.33325 3.19056 9.21034 2.89381 8.99154 2.67502C8.77275 2.45623 8.47601 2.33331 8.16659 2.33331C7.85717 2.33331 7.56042 2.45623 7.34163 2.67502C7.12284 2.89381 6.99992 3.19056 6.99992 3.49998V5.83331H5.83325C4.90499 5.83331 4.01476 6.20206 3.35838 6.85844C2.702 7.51482 2.33325 8.40506 2.33325 9.33331V10.5H25.6666V9.33331C25.6666 8.40506 25.2978 7.51482 24.6415 6.85844C23.9851 6.20206 23.0948 5.83331 22.1666 5.83331Z" fill="#717579"></path>
+										<path d="M2.33325 22.1666C2.33325 23.0949 2.702 23.9851 3.35838 24.6415C4.01476 25.2979 4.90499 25.6666 5.83325 25.6666H22.1666C23.0948 25.6666 23.9851 25.2979 24.6415 24.6415C25.2978 23.9851 25.6666 23.0949 25.6666 22.1666V12.8333H2.33325V22.1666Z" fill="#717579"></path>
+									</svg>
+									<span class="badge light text-white bg-success rounded-circle"></span>
+                                </a>
+							</li>
+							
+							<li class="nav-item dropdown  header-profile">
+								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+									<img src="images/user.jpg" width="56" alt="">
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="app-profile.html" class="dropdown-item ai-icon">
+										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+										<span class="ms-2">Profile </span>
+									</a>
+									<a href="email-inbox.html" class="dropdown-item ai-icon">
+										<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+										<span class="ms-2">Inbox </span>
+									</a>
+									<a href="page-error-404.html" class="dropdown-item ai-icon">
+										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+										<span class="ms-2">Logout </span>
+									</a>
+								</div>
+							</li>
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+		Dashboard
+		home
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="dlabnav">
+            <div class="dlabnav-scroll">
+				<ul class="metismenu" id="menu">
+					<li><a class="ai-icon" href="index.html" aria-expanded="false">
+						<i class="la la-home"></i>
+						<span class="nav-text">Dashboard</span>
+					</a>
+
+					</a>
+                </ul>
+				<div class="copyright">
+					<p><strong>BeTrack Admin</strong> © 2022 All Rights Reserved</p>
+					<p class="fs-12">Made By <span class="??"></span> by Vairous</p>
+				</div>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <!-- row -->
+                <div class="row">
+                    <div id="Customers-view" class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Customers</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example2" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>Order ID</th>
+                                                <th>Date</th>
+                                                <th>Phone Number</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#1</td>
+                                                <td>Omar Ahmed</td>
+                                                <td>Cairo</td>
+                                                <td>M-50</td>
+                                                <td>2022/04/25</td>
+                                                <td>01233333</td>
+                                            </tr>
+											<tr>
+                                                <td>#2</td>
+                                                <td>Mostafa Mohamed</td>
+                                                <td>Alex</td>
+                                                <td>C-35</td>
+                                                <td>2022/04/28</td>
+                                                <td>011233333</td>
+                                            </tr>
+											<tr>
+                                                <td>#3</td>
+                                                <td>Omayma Khaled</td>
+                                                <td>Cairo</td>
+                                                <td>C-21</td>
+                                                <td>2022/04/29</td>
+                                                <td>012111111</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#4</td>
+                                                <td>Mazen Waeal</td>
+                                                <td>Giza</td>
+                                                <td>M-1</td>
+                                                <td>202/05/12</td>
+                                                <td>0121242333</td>
+                                            </tr>
+											<tr>
+                                                <td>#5</td>
+                                                <td>Moamen mahmoud</td>
+                                                <td>Cairo</td>
+                                                <td>T-13</td>
+                                                <td>202/05/19</td>
+                                                <td>0134788</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#6</td>
+                                                <td>Ahmed Ayman</td>
+                                                <td>Giza</td>
+                                                <td>M-22</td>
+                                                <td>202/05/15</td>
+                                                <td>012555555</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#7</td>
+                                                <td>Loaay Hamdy</td>
+                                                <td>Alex</td>
+                                                <td>T-14</td>
+                                                <td>2022/05/13</td>
+                                                <td>012443433</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#8</td>
+                                                <td>Asmaa ali</td>
+                                                <td>Giza</td>
+                                                <td>C-55</td>
+                                                <td>2022/05/17</td>
+                                                <td>0102220333</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#9</td>
+                                                <td>HeBa mazen</td>
+                                                <td>Cairo</td>
+                                                <td>C-18</td>
+                                                <td>2022/05/24</td>
+                                                <td>012346000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#10</td>
+                                                <td>Rania nader</td>
+                                                <td>Alex</td>
+                                                <td>T-33</td>
+                                                <td>2022/05/29</td>
+                                                <td>0155599202</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div id="Employees-view" class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Employees</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example3" class="display" style="min-width: 845px">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>Gender</th>
+                                                <th>Education</th>
+                                                <th>Mobile</th>
+                                                <th>Email</th>
+                                                <th>Joining Date</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                                <td>Mohamed Amr</td>
+                                                <td>Cairo</td>
+                                                <td>Male</td>
+                                                <td>M.COM., P.H.D.</td>
+                                                <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
+                                                <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td>2022/04/11</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="edit-Employees.html" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>												
+												</td>												
+                                            </tr>
+											<tr>
+                                                <td><img class="rounded-circle" width="35" src="images/profile/small/pic7.jpg" alt=""></td>
+                                                <td>Noha Adel</td>
+                                                <td>Cairo</td>
+                                                <td>Female</td>
+                                                <td>M.COM., P.H.D.</td>
+                                                <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
+                                                <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td>2022/04/9</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="edit-Employees.html" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>												
+												</td>												
+                                            </tr>
+											<tr>
+                                                <td><img class="rounded-circle" width="35" src="images/profile/small/pic5.jpg" alt=""></td>
+                                                <td>Hossam Ali</td>
+                                                <td>Cairo</td>
+                                                <td>Male</td>
+                                                <td>M.COM., P.H.D.</td>
+                                                <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
+                                                <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td>2022/04/13</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="edit-Employees.html" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>												
+												</td>												
+                                            </tr>
+											<tr>
+                                                <td><img class="rounded-circle" width="35" src="images/profile/small/pic10.jpg" alt=""></td>
+                                                <td>Nouran Hatem</td>
+                                                <td>Cairo</td>
+                                                <td>Female</td>
+                                                <td>M.COM., P.H.D.</td>
+                                                <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
+                                                <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td>2022/04/8</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="edit-Employees.html" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>												
+												</td>												
+                                            </tr>
+                                            <tr>
+												<td><img class="rounded-circle" width="35" src="images/profile/small/pic4.jpg" alt=""></td>
+                                                <td>Ali Kamal</td>
+                                                <td>Cairo</td>
+                                                <td>Male</td>
+                                                <td>M.COM., P.H.D.</td>
+                                                <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
+                                                <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td>2022/04/7</td>
+                                                <td>
+													<div class="d-flex">
+														<a href="edit-Employees.html" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>
+												</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div id="representative-view" class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Representative</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example4" class="display" style="min-width: 845px">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Order ID</th>
+                                                <th>Moto Type </th>
+												<th>PHone Number </th>
+												<th>Status </th>
+                                                <th>Date</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Mohamed Ahmed</td>
+                                                <td>1-50-22</td>
+                                                <td>Motorcycle</td>
+                                                <td>01022334455</td>
+                                                <td><span class="badge light badge-success">Active</span></td>
+                                                <td>2022/04/25</td>
+                                                <td><strong>540 L.E</strong></td>
+                                            </tr>
+                                            <tr>
+												<td>02</td>
+                                                <td>Moahmed mahrous</td>
+                                                <td>21-35</td>
+                                                <td>Car</td>
+                                                <td>01122334455</td>
+                                                <td><span class="badge light badge-warning">Panding</span></td>
+												<td>2022/04/12</td>
+                                                <td><strong>350 L.E</strong></td>
+                                            </tr>
+                                            <tr>
+												<td>03</td>
+                                                <td>Loay nader</td>
+                                                <td>55-18</td>
+                                                <td>Car</td>
+                                                <td>01099663366</td>
+                                                <td><span class="badge light badge-success">Active</span></td>
+                                                <td>2022/04/2</td>
+												<td><strong>230 L.E</strong></td>
+                                            </tr>
+                                            <tr>
+												<td>04</td>
+                                                <td>Ali Mohab</td>
+                                                <td>33</td>
+                                                <td>Truck</td>
+												<td>01144665533</td>
+                                                <td><span class="badge light badge-danger">Offline</span></td>
+                                                <td>2022/04/29</td>
+                                                <td><strong>120 L.E</strong></td>
+                                            </tr>
+                                            <tr>
+												<td>05</td>
+                                                <td>Yasser glal</td>
+                                                <td>13-14</td>
+                                                <td>Truck</td>
+												<td>01244556788</td>
+                                                <td><span class="badge light badge-warning">Panding</span></td>
+                                                <td>2022/04/28</td>
+                                                <td><strong>350 L.E</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="../index.htm" target="_blank">AHMED MOHAMED</a> 2022</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+</html>
